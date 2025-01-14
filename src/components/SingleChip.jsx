@@ -18,7 +18,7 @@ export const SingleChip=({id,name,selectedGenres,setSelectedGenres})=> {
 
     }
   return (
-      <Chip icon={selected ? <DoneIcon /> : <PanoramaFishEyeIcon/>} label={name} clickable onClick={handleClick}/>
+      <Chip style={{color: 'white'}} icon={selected ? <DoneIcon /> : <PanoramaFishEyeIcon/>} label={name} clickable onClick={handleClick}/>
 
   );
 }

@@ -8,7 +8,7 @@ const urlMovies=`https://api.themoviedb.org/3/discover/movie?api_key=${import.me
 export const Movies = () => {
   const [urlForGenres,setUrlForGenres] = useState('')
   return (
-    <div>
+    <div className='page'>
         <Genres type='movie' setUrlForGenres={setUrlForGenres}/>
         <Content url={urlMovies+'&with_genres='+urlForGenres} type='movie'/>
     </div>

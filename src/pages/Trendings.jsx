@@ -5,7 +5,7 @@ const urlTrending=`https://api.themoviedb.org/3/trending/all/day?api_key=${impor
 export const Trendings = () => {
 
   return (
-    <div>
+    <div className='page'>
       <Content url={urlTrending}/>
     </div>
   )

@@ -23,19 +23,21 @@ export const SearchPage=()=> {
   }
 
   return (
-    <>
-    <Box sx={{ '& > :not(style)': { m: 1 }, display:'flex', flexDirection:'column', alignItems:'center' }}>
-      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <LocalMoviesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-        <TextField id="input-with-sx" label="Search Movies or TV Series" variant="standard" value={searchText} onChange={(e)=>setSearchText(e.target.value)}/>
-        <Button variant='contained' color="secondary"onClick={()=>Search()}>Search</Button>
+    <div className='page'>
+      <div>
+      <Box sx={{ '& > :not(style)': { m: 1 }, display:'flex', flexDirection:'column', alignItems:'center' }}>
+        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+          <LocalMoviesIcon color="secondary" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <TextField id="input-with-sx" sx={{color:'text.primary'}} label="Search Movies or TV Series" variant="standard" value={searchText} onChange={(e)=>setSearchText(e.target.value)}/>
+          <Button variant='contained' color="secondary"onClick={()=>Search()}>Search</Button>
+        </Box>
+        <Stack direction="row" spacing={2}>
+          <Button variant='contained' color="secondary" onClick={()=>setType('tv')}>TVSeries</Button>
+          <Button variant='contained' color="secondary" onClick={()=>setType('movie')}>Movies</Button>
+        </Stack>
       </Box>
-      <Stack direction="row" spacing={2}>
-        <Button variant='contained' color="secondary" onClick={()=>setType('tv')}>TVSeries</Button>
-        <Button variant='contained' color="secondary" onClick={()=>setType('movie')}>Movies</Button>
-      </Stack>
-    </Box>
-    {fetchData && <Content url={urlSearch} searchText={searchText} type={type} setFetchData={setFetchData}/>}
-    </>
+      {fetchData && <Content url={urlSearch} searchText={searchText} type={type} setFetchData={setFetchData}/>}
+      </div>
+    </div>
   );
 }
