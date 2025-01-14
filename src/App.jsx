@@ -1,13 +1,13 @@
 import './App.css'
-import { Trendings } from './pages/Trendings'
 import { createBrowserRouter} from 'react-router-dom'
-import { TVSeries } from './pages/TVSeries'
-import { SearchPage } from './pages/SearchPage'
-import { NotFound } from './pages/NotFound'
-import { Movies } from './pages/Movies'
 import { RouterProvider } from 'react-router-dom'
 import { Header } from './components/Header'
 
+import { Trendings } from './pages/Trendings'
+import { SearchPage } from './pages/SearchPage'
+import { NotFound } from './pages/NotFound'
+import { Movies } from './pages/Movies'
+import { TVSeries } from './pages/TVSeries'
 
 const router = createBrowserRouter([{
   element:<Header/>,
